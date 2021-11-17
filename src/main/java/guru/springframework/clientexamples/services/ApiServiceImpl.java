@@ -13,11 +13,11 @@ import java.util.List;
  * Time: 23:16
  */
 @Service
-public class apiServiceImpl implements Apiservice {
+public class ApiServiceImpl implements Apiservice {
 
     private RestTemplate restTemplate;
 
-    public apiServiceImpl(RestTemplate restTemplate) {
+    public ApiServiceImpl(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
     }
 
