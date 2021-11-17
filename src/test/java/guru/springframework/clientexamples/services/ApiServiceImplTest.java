@@ -22,7 +22,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 @ExtendWith(SpringExtension.class)
-class apiServiceImplTest {
+class ApiServiceImplTest {
 
     @Autowired
     Apiservice apiservice;
