@@ -7,6 +7,8 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 import java.util.List;
 
@@ -34,5 +36,12 @@ class apiServiceImplTest {
         List<User> users = apiservice.getUsers(1);
 
         assertEquals(1, users.size());
+    }
+
+    @Test
+    void testGetUsersReactive() {
+        Flux<User> users = apiservice.getUsers(Mono.just(1));
+
+        users.count().doOnSuccess(aLong -> assertEquals(1L, aLong));
     }
 }
